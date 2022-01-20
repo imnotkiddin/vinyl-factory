@@ -1,16 +1,13 @@
 {
   "files": {
-    "main.css": "/vinyl-factory/static/css/main.073c9b0a.css",
-    "main.js": "/vinyl-factory/static/js/main.d5e31a56.js",
-    "static/js/787.39a7105e.chunk.js": "/vinyl-factory/static/js/787.39a7105e.chunk.js",
-    "static/media/logo.svg": "/vinyl-factory/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "main.css": "/vinyl-factory/static/css/main.79f0b512.css",
+    "main.js": "/vinyl-factory/static/js/main.c0f03891.js",
     "index.html": "/vinyl-factory/index.html",
-    "main.073c9b0a.css.map": "/vinyl-factory/static/css/main.073c9b0a.css.map",
-    "main.d5e31a56.js.map": "/vinyl-factory/static/js/main.d5e31a56.js.map",
-    "787.39a7105e.chunk.js.map": "/vinyl-factory/static/js/787.39a7105e.chunk.js.map"
+    "main.79f0b512.css.map": "/vinyl-factory/static/css/main.79f0b512.css.map",
+    "main.c0f03891.js.map": "/vinyl-factory/static/js/main.c0f03891.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.d5e31a56.js"
+    "static/css/main.79f0b512.css",
+    "static/js/main.c0f03891.js"
   ]
 }
