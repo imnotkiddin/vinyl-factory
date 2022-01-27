@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { CartWidget } from "./CartWidget";
 import { MenuItems } from "./MenuItem";
 import "./NavBar.css";
 
@@ -30,6 +31,7 @@ class Navbar extends Component {
             );
           })}
         </ul>
+        <CartWidget />
       </nav>
     );
   }
