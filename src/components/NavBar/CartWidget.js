@@ -1,10 +1,10 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./CartWidget.css";
 
 export const CartWidget = () => {
   return (
-    <div>
-      <FontAwesomeIcon icon="shopping-cart" />
+    <div className="cartIcon">
+      <i class="fas fa-shopping-cart"></i>
     </div>
   );
 };

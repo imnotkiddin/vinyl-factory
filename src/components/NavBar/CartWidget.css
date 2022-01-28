@@ -1,0 +1,12 @@
+.cartIcon {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold
+}
