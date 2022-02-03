@@ -1,0 +1,18 @@
+.clickContainer {
+    display: grid;
+    grid-template-columns: auto auto auto auto;  
+    grid-gap: 10px;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 10px;
+}
+button {
+    background-color: #c369ec;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 20px;
+}
