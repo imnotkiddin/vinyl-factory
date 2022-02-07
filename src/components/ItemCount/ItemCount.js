@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./ItemCount.css";
-import Bootstrap from "./node_modules/bootstrap/dist/js/bootstrap.bundle.min";
 
 export const ItemCount = () => {
   const [clicks, setClicks] = useState(0);
