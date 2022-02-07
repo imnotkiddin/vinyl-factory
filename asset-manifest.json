@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/vinyl-factory/static/css/main.e5ecc1fe.css",
-    "main.js": "/vinyl-factory/static/js/main.3d76406d.js",
+    "main.css": "/vinyl-factory/static/css/main.c6cc8ae9.css",
+    "main.js": "/vinyl-factory/static/js/main.d0f26251.js",
     "index.html": "/vinyl-factory/index.html",
-    "main.e5ecc1fe.css.map": "/vinyl-factory/static/css/main.e5ecc1fe.css.map",
-    "main.3d76406d.js.map": "/vinyl-factory/static/js/main.3d76406d.js.map"
+    "main.c6cc8ae9.css.map": "/vinyl-factory/static/css/main.c6cc8ae9.css.map",
+    "main.d0f26251.js.map": "/vinyl-factory/static/js/main.d0f26251.js.map"
   },
   "entrypoints": [
-    "static/css/main.e5ecc1fe.css",
-    "static/js/main.3d76406d.js"
+    "static/css/main.c6cc8ae9.css",
+    "static/js/main.d0f26251.js"
   ]
 }
