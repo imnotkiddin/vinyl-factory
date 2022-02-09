@@ -2,6 +2,10 @@ import React from "react";
 import { ItemCount } from "../ItemCount/ItemCount";
 
 export const Item = ({ prod }) => {
+  const onAdd = (cantidad) => {
+    console.log("Se ha agregado " + cantidad);
+  };
+
   return (
     <div className="card cardItem" key={prod.id}>
       <div className="card-body">
@@ -11,7 +15,7 @@ export const Item = ({ prod }) => {
         <p className="card-text">{prod.precio}</p>
         <button className="btn btn-primary">Comprar</button>
       </div>
-      <ItemCount stock="5" />
+      <ItemCount stock={5} initial={1} onAdd={onAdd} />
     </div>
   );
 };

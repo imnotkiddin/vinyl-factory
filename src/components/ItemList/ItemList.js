@@ -8,9 +8,9 @@ export const ItemList = ({ productosMap }) => {
       <h2>DISCOS</h2>
       <CardGroup>
         {productosMap.map((prod) => (
-          <>
+          <div key={prod.id}>
             <Item prod={prod} />
-          </>
+          </div>
         ))}
       </CardGroup>
     </Container>

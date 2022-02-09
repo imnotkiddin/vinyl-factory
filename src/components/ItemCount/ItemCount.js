@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import "./ItemCount.css";
 
-export const ItemCount = ({ stock }) => {
-  const [clicks, setClicks] = useState(1);
+export const ItemCount = ({ stock, initial, onAdd }) => {
+  const [clicks, setClicks] = useState(initial);
 
   const sumarClick = () => {
     if (stock > clicks) {
@@ -21,9 +21,9 @@ export const ItemCount = ({ stock }) => {
     }
   };
 
-  const compra = () => {
-    console.log("Se han comprado " + clicks + " unidades");
-  };
+  // const compra = () => {
+  //   console.log("Se han comprado " + clicks + " unidades");
+  // };
 
   return (
     <div className="clickContainer">
@@ -34,7 +34,7 @@ export const ItemCount = ({ stock }) => {
       <div onClick={sumarClick}>
         <button>+</button>
       </div>
-      <Button variant="danger" size="lg" onClick={compra}>
+      <Button variant="danger" size="lg" onClick={() => onAdd(clicks)}>
         Comprar
       </Button>
     </div>
