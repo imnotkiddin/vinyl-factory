@@ -11,7 +11,7 @@ export const Item = ({ prod }) => {
         <p className="card-text">{prod.precio}</p>
         <button className="btn btn-primary">Comprar</button>
       </div>
-      <ItemCount />
+      <ItemCount stock="5" />
     </div>
   );
 };

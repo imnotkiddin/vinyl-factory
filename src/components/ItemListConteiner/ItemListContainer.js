@@ -25,7 +25,7 @@ export const ItemListContainer = () => {
   }, []);
 
   return (
-    <Container classname="my-5">
+    <Container className="my-5">
       {loading ? (
         <h1>Cargando...</h1>
       ) : (
