@@ -31,7 +31,7 @@ export const ItemListContainer = () => {
   }, [catId]);
 
   return (
-    <Container className="my-5">
+    <Container className="my-5 d-flex">
       {loading ? (
         <h1>Cargando...</h1>
       ) : (

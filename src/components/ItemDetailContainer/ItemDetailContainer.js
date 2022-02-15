@@ -1,10 +1,27 @@
-import { useEffect } from "react";
-import { getItems } from "../../api/Api";
+import React, { useState, useEffect } from "react";
+import { ItemDetail } from "../ItemDetail/ItemDetail";
+import { pedirDatos } from "../pedirDatos";
+import { useParams } from "react-router-dom";
 
-export default function ItemDetailContainer() {
+export const ItemDetailContainer = () => {
+  const [item, setItem] = useState();
+  const [loading, setLoading] = useState(false);
+  const { itemId } = useParams();
+
   useEffect(() => {
-    getItems().then((items) => {
-      items.find((i) => i.id === 1);
-    });
-  }, []);
-}
+    setLoading(true);
+    pedirDatos()
+      .then((resp) => {
+        setItem(resp.find((prod) => prod.id === Number(itemId)));
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, [itemId]);
+
+  return (
+    <div className="container my-5">
+      {loading ? <h2>Cargando...</h2> : <ItemDetail {...item} />}
+    </div>
+  );
+};

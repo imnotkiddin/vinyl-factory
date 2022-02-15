@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 // import { Item } from "./components/Item/Item";
 import { CartWidget } from "./components/NavBar/CartWidget";
 import { NavBar2 } from "./components/NavBar/NavBar2";
+import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/vinyl-factory" element={<ItemListContainer />} />
           <Route path="/" element={<ItemListContainer />} />
+          <Route path="/detail/:itemId" element={<ItemDetailContainer />} />
           <Route path="/productos/:catId" element={<ItemListContainer />} />
           <Route path="/pokeapi" element={<PokeApi />} />
           <Route path="/cart" element={<CartWidget />} />

@@ -1,5 +1,6 @@
 import React from "react";
 import { ItemCount } from "../ItemCount/ItemCount";
+import { Link } from "react-router-dom";
 
 export const Item = ({ prod }) => {
   const onAdd = (cantidad) => {
@@ -12,8 +13,11 @@ export const Item = ({ prod }) => {
         <img src={prod.imagen} alt={prod.nombre} />
         <h5 className="card-title">{prod.nombre}</h5>
         <p className="card-text">{prod.descripcion}</p>
-        <p className="card-text">{prod.precio}</p>
-        <p className="card-text text-muted">{prod.category}</p>
+        <p className="card-text">${prod.precio}</p>
+        <p className="card-text text-muted">Decada {prod.category}</p>
+        <Link to={`/detail/${prod.id}`} className="btn btn-success">
+          Ver Mas
+        </Link>
         <button className="btn btn-primary">Comprar</button>
       </div>
       <ItemCount stock={5} initial={1} onAdd={onAdd} />
