@@ -12,28 +12,85 @@ class Navbar extends Component {
   };
   render() {
     return (
-      <nav className="navbarItems text-decoration-none">
-        <Link to="/">
-          <h1 className="navbar-logo text-decoration-none">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <p>
             Vinyl Factory <i className="fas fa-compact-disc" />
-          </h1>
-        </Link>
-        <div className="menu-icon" onClick={this.handleClick}>
-          <i
-            className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}
-          ></i>
+          </p>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <p class="nav-link active" aria-current="page">
+                  Home
+                </p>
+              </li>
+              <li class="nav-item">
+                <p class="nav-link">Tu Carrito</p>
+              </li>
+              <li class="nav-item dropdown">
+                <p
+                  class="nav-link dropdown-toggle"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Discos por décadas
+                </p>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <Link to="productos/60s">
+                      <a class="dropdown-item" href="#">
+                        Discos de los 60s
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li>
+                    <Link to="productos/70s">
+                      <p class="dropdown-item">Discos de los 70s</p>
+                    </Link>
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li>
+                    <Link to="productos/80s">
+                      <p class="dropdown-item">Discos de los 80s</p>
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+              {/* <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li> */}
+            </ul>
+            <form class="d-flex">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
         </div>
-        <ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
-          {MenuItems.map((item, index) => {
-            return (
-              <Link to="productos">
-                <li key={index}>
-                  <p className={item.cName}>{item.title}</p>
-                </li>
-              </Link>
-            );
-          })}
-        </ul>
         <CartWidget />
       </nav>
     );
