@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export const ItemDetail = ({
   id,
@@ -8,6 +9,16 @@ export const ItemDetail = ({
   imagen,
   category,
 }) => {
+  const navigate = useNavigate();
+
+  const handleVolver = () => {
+    navigate(-1);
+  };
+
+  //   const handleVolverInicio = () => {
+  //     navigate("/");
+  //     };
+
   return (
     <div>
       <h2>{nombre}</h2>
@@ -15,6 +26,9 @@ export const ItemDetail = ({
       <p>{descripcion}</p>
       <img src={imagen} alt={nombre} />
       <p>Decada {category}</p>
+      <button onClick={handleVolver} className="btn btn-primary">
+        Volver
+      </button>
     </div>
   );
 };
