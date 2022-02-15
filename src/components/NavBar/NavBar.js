@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { CartWidget } from "./CartWidget";
 import { MenuItems } from "./MenuItem";
 import "./NavBar.css";
@@ -11,10 +12,12 @@ class Navbar extends Component {
   };
   render() {
     return (
-      <nav className="navbarItems">
-        <h1 className="navbar-logo">
-          Vinyl Factory <i className="fas fa-compact-disc"></i>
-        </h1>
+      <nav className="navbarItems text-decoration-none">
+        <Link to="/">
+          <h1 className="navbar-logo text-decoration-none">
+            Vinyl Factory <i className="fas fa-compact-disc" />
+          </h1>
+        </Link>
         <div className="menu-icon" onClick={this.handleClick}>
           <i
             className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}
@@ -23,11 +26,11 @@ class Navbar extends Component {
         <ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
           {MenuItems.map((item, index) => {
             return (
-              <li key={index}>
-                <a className={item.cName} href={item.url}>
-                  {item.title}
-                </a>
-              </li>
+              <Link to="productos">
+                <li key={index}>
+                  <p className={item.cName}>{item.title}</p>
+                </li>
+              </Link>
             );
           })}
         </ul>

@@ -13,6 +13,7 @@ export const Item = ({ prod }) => {
         <h5 className="card-title">{prod.nombre}</h5>
         <p className="card-text">{prod.descripcion}</p>
         <p className="card-text">{prod.precio}</p>
+        <p className="card-text text-muted">{prod.category}</p>
         <button className="btn btn-primary">Comprar</button>
       </div>
       <ItemCount stock={5} initial={1} onAdd={onAdd} />
