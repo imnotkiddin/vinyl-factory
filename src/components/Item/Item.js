@@ -18,7 +18,6 @@ export const Item = ({ prod }) => {
         <Link to={`/detail/${prod.id}`} className="btn btn-success">
           Ver Mas
         </Link>
-        <button className="btn btn-primary">Comprar</button>
       </div>
       <ItemCount stock={5} initial={1} onAdd={onAdd} />
     </div>
