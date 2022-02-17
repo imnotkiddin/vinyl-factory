@@ -6,6 +6,7 @@ export const productos = [
     descripcion: "Descripcion del producto 1",
     imagen: "https://picsum.photos/200/300",
     category: "60s",
+    stock: 5,
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ export const productos = [
     descripcion: "Descripcion del producto 2",
     imagen: "https://picsum.photos/200/300",
     category: "70s",
+    stock: 5,
   },
   {
     id: 3,
@@ -22,5 +24,6 @@ export const productos = [
     descripcion: "Descripcion del producto 3",
     imagen: "https://picsum.photos/200/300",
     category: "80s",
+    stock: 5,
   },
 ];

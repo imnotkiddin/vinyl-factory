@@ -4,9 +4,9 @@ import { Item } from "../Item/Item";
 
 export const ItemList = ({ productosMap }) => {
   return (
-    <Container>
+    <Container className="container m-5">
       <h2>DISCOS</h2>
-      <CardGroup>
+      <CardGroup className="container m-5 ">
         {productosMap.map((prod) => (
           <div key={prod.id}>
             <Item prod={prod} />

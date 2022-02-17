@@ -19,7 +19,8 @@ export const Item = ({ prod }) => {
           Ver Mas
         </Link>
       </div>
-      <ItemCount stock={5} initial={1} onAdd={onAdd} />
+      {/* Arreglar */}
+      <ItemCount max={prod.stock} initial={1} onAdd={onAdd} />
     </div>
   );
 };
