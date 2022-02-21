@@ -1,17 +1,15 @@
 import "./App.css";
 import React from "react";
 import { ItemListContainer } from "./components/ItemListConteiner/ItemListContainer";
-
-import { PokeApi } from "./components/PokeApi/PokeApi";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-// import { Item } from "./components/Item/Item";
-import { CartWidget } from "./components/NavBar/CartWidget";
+import { CartView } from "./components/CartView/CartView";
 import { NavBar2 } from "./components/NavBar/NavBar2";
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
+import { CartProvider } from "./context/CartContext";
 
 function App() {
   return (
-    <div>
+    <CartProvider>
       <BrowserRouter>
         <NavBar2 />
         <Routes>
@@ -19,14 +17,10 @@ function App() {
           <Route path="/" element={<ItemListContainer />} />
           <Route path="/detail/:itemId" element={<ItemDetailContainer />} />
           <Route path="/productos/:catId" element={<ItemListContainer />} />
-          <Route path="/pokeapi" element={<PokeApi />} />
-          <Route path="/cart" element={<CartWidget />} />
+          <Route path="/cart" element={<CartView />} />
         </Routes>
-
-        {/* <PokeApi />
-        <ItemListContainer /> */}
       </BrowserRouter>
-    </div>
+    </CartProvider>
   );
 }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { ItemCount } from "../ItemCount/ItemCount";
+
 import { Link } from "react-router-dom";
 
 export const Item = ({ prod }) => {
@@ -19,8 +19,6 @@ export const Item = ({ prod }) => {
           Ver Mas
         </Link>
       </div>
-      {/* Arreglar */}
-      <ItemCount max={prod.stock} initial={1} onAdd={onAdd} />
     </div>
   );
 };

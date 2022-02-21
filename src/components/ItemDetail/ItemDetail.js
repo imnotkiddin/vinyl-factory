@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
 import { ItemCount } from "../ItemCount/ItemCount";
 
 export const ItemDetail = ({
@@ -15,13 +16,20 @@ export const ItemDetail = ({
   const navigate = useNavigate();
   const [cantidad, setCantidad] = useState(0);
   const [agregado, setAgregado] = useState(false);
+  const { agregarAlCarrito, isInCart } = useContext(CartContext);
 
   const handleVolver = () => {
     navigate(-1);
   };
   const handleAdd = () => {
     if (cantidad > 0) {
-      console.log("Item Agregado: ", { id, nombre, precio, cantidad });
+      agregarAlCarrito({
+        id,
+        nombre,
+        precio,
+        imagen,
+        cantidad,
+      });
       setAgregado(true);
     }
   };
@@ -38,7 +46,7 @@ export const ItemDetail = ({
       <p>${precio}</p>
       <p>Decada {category}</p>
 
-      {!agregado ? (
+      {!isInCart(id) ? (
         <ItemCount
           max={stock}
           initial={1}

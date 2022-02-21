@@ -20,7 +20,7 @@ export const ItemDetailContainer = () => {
   }, [itemId]);
 
   return (
-    <div className="container m-5">
+    <div className="container ">
       {loading ? <h2>Cargando...</h2> : <ItemDetail {...item} />}
     </div>
   );
