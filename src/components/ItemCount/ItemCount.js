@@ -31,21 +31,16 @@ export const ItemCount = ({ max, setCantidad, cantidad, onAdd }) => {
   // };
 
   return (
-    <div className="clickContainer">
+    <div className="clickContainer container my-2 card-text">
       <div onClick={handleRestar}>
-        <Button className="my-1">-</Button>
+        <Button className="card-text">-</Button>
       </div>
       <div>{cantidad}</div>
       <div onClick={handleSumar}>
         <Button className="my-1">+</Button>
       </div>
       <br />
-      <Button
-        variant="danger"
-        size="lg"
-        onClick={() => onAdd(cantidad)}
-        className="my-2"
-      >
+      <Button variant="success" size="lg" onClick={() => onAdd(cantidad)}>
         Agregar al carrito
       </Button>
     </div>

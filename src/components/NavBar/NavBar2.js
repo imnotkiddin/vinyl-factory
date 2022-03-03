@@ -38,8 +38,10 @@ export const NavBar2 = () => {
             <p>Cart</p>
           </Link>
         </li>
+        <li>
+          <CartWidget />
+        </li>
       </ul>
-      <CartWidget />
     </nav>
   );
 };

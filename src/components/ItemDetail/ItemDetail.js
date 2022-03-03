@@ -39,30 +39,32 @@ export const ItemDetail = ({
   //     };
 
   return (
-    <div>
-      <h2>{nombre}</h2>
+    <div className="card" style={{ width: 400 }}>
       <img src={imagen} alt={nombre} />
-      <p>{descripcion}</p>
-      <p>${precio}</p>
-      <p>Decada {category}</p>
+      <div className="card-body">
+        <h2 className="card-title">{nombre}</h2>
+        <p className="card-text">{descripcion}</p>
+        <p className="card-text">${precio}</p>
+        <p className="card-text">Decada {category}</p>
 
-      {!isInCart(id) ? (
-        <ItemCount
-          max={stock}
-          initial={1}
-          onAdd={handleAdd}
-          setCantidad={setCantidad}
-          cantidad={cantidad}
-        />
-      ) : (
-        <Link to="/cart" className="btn btn-success my-5">
-          Terminar Compra
-        </Link>
-      )}
+        {!isInCart(id) ? (
+          <ItemCount
+            max={stock}
+            initial={1}
+            onAdd={handleAdd}
+            setCantidad={setCantidad}
+            cantidad={cantidad}
+          />
+        ) : (
+          <Link to="/cart" className="btn btn-success my-5">
+            Terminar Compra
+          </Link>
+        )}
 
-      <Button onClick={handleVolver} className="btn btn-primary my-2">
-        Volver
-      </Button>
+        <Button onClick={handleVolver} className="btn btn-danger my-2">
+          Volver
+        </Button>
+      </div>
     </div>
   );
 };

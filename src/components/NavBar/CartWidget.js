@@ -8,7 +8,7 @@ export const CartWidget = () => {
   return (
     <div className="cartIcon">
       <i className="fas fa-shopping-cart"></i>
-      <span>{totalCantidad()}</span>
+      <span>{totalCantidad() !== 0 ? totalCantidad() : <></>}</span>
     </div>
   );
 };

@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export const CartItem = ({ nombre, precio, cantidad, id }) => {
   const { removerDelCarrito } = useContext(CartContext);
   return (
-    <div>
+    <div className="card" style={{ width: 300 }}>
       <h3>{nombre}</h3>
       <p>Precio: ${precio}</p>
       <p>Cantidad: {cantidad}</p>
@@ -15,7 +15,7 @@ export const CartItem = ({ nombre, precio, cantidad, id }) => {
           removerDelCarrito(id);
         }}
       >
-        <i class="fa-solid fa-trash"></i>
+        <i className="fa-solid fa-trash"></i>
       </button>
     </div>
   );

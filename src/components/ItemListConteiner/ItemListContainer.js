@@ -1,9 +1,10 @@
-import { React, useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
-import { pedirDatos } from "../pedirDatos";
+import React, { useEffect, useState } from "react";
 import "./ItemListContainer.css";
+import { Container } from "react-bootstrap";
 import { ItemList } from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
+import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
+import { db } from "../../firebase/config";
 
 export const ItemListContainer = () => {
   const [loading, setLoading] = useState(false);
@@ -14,16 +15,20 @@ export const ItemListContainer = () => {
 
   useEffect(() => {
     setLoading(true);
-    pedirDatos()
-      .then((resp) => {
-        if (!catId) {
-          setProductosMap(resp);
-        } else {
-          setProductosMap(resp.filter((prod) => prod.category === catId));
-        }
-      })
-      .catch((error) => {
-        console.log(error);
+
+    const productosRef = collection(db, "productos");
+
+    const q = catId
+      ? query(productosRef, where("category", "==", catId), orderBy("name"))
+      : productosRef;
+
+    getDocs(q)
+      .then((collection) => {
+        const items = collection.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setProductosMap(items);
       })
       .finally(() => {
         setLoading(false);
@@ -31,7 +36,7 @@ export const ItemListContainer = () => {
   }, [catId]);
 
   return (
-    <Container className="m-5 d-flex">
+    <Container className="my-2">
       {loading ? (
         <h1>Cargando...</h1>
       ) : (

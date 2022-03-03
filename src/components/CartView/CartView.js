@@ -4,7 +4,7 @@ import { CartContext } from "../../context/CartContext";
 import { CartItem } from "./CartItem";
 
 export const CartView = () => {
-  const { carrito, vaciarCarrito } = useContext(CartContext);
+  const { carrito, vaciarCarrito, totalCompra } = useContext(CartContext);
   return (
     <div className="container my-5">
       {carrito.length > 0 ? (
@@ -17,11 +17,14 @@ export const CartView = () => {
             ))}
           </section>
           <br />
+          <p>Total ${totalCompra()}</p>
           <div>
             <button className="btn btn-danger" onClick={vaciarCarrito}>
               Vaciar Carrito
             </button>
-            <button className="btn btn-success">Terminar mi compra</button>
+            <Link to="/checkout" className="btn btn-success">
+              Terminar mi compra
+            </Link>
           </div>
         </>
       ) : (
