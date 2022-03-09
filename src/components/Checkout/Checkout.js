@@ -13,8 +13,7 @@ import {
   writeBatch,
   addDoc,
 } from "firebase/firestore";
-import { faSortAlphaDownAlt } from "@fortawesome/free-solid-svg-icons";
-
+import Swal from "sweetalert2";
 export const Checkout = () => {
   const { carrito, totalCompra, vaciarCarrito } = useContext(CartContext);
 
@@ -77,7 +76,7 @@ export const Checkout = () => {
         batch.commit();
         Swal.fire({
           title: "Orden realizada",
-          text: `Gracias por su compra, su orden ha sido registrada con el número ${res.id}`,
+          text: `Gracias por su compra, su orden ha sido registrada con el código ${res.id}`,
           icon: "success",
           confirmButtonText: "OK",
         });
