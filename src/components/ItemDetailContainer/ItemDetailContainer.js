@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { ItemDetail } from "../ItemDetail/ItemDetail";
-import { pedirDatos } from "../pedirDatos";
 import { useParams } from "react-router-dom";
 import { collection, doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase/config";

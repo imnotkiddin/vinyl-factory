@@ -80,7 +80,7 @@ export const Checkout = () => {
           icon: "success",
           confirmButtonText: "OK",
         });
-        vaciarCarrito();
+        vaciarCarrito() && Navigate("/");
       });
     } else {
       Swal.fire({
@@ -109,8 +109,6 @@ export const Checkout = () => {
               placeholder="Nombre"
               value={values.nombre}
               className="form-control my-2"
-              type="text"
-              placeholder="nombre"
             />
             {values.nombre.length < 2 && (
               <p className="text-muted">Nombre invalido</p>
@@ -122,7 +120,6 @@ export const Checkout = () => {
               name="apellido"
               value={values.apellido}
               className="form-control my-2"
-              type="text"
               placeholder="apellido"
             />
             {values.apellido.length < 2 && (

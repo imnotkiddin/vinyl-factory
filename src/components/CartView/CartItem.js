@@ -15,7 +15,7 @@ export const CartItem = ({ nombre, precio, cantidad, id }) => {
           removerDelCarrito(id);
         }}
       >
-        <i className="fa-solid fa-trash"></i>
+        <i className="fas fa-trash" />
       </button>
     </div>
   );

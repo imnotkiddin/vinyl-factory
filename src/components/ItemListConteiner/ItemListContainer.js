@@ -19,7 +19,7 @@ export const ItemListContainer = () => {
     const productosRef = collection(db, "productos");
 
     const q = catId
-      ? query(productosRef, where("category", "==", catId), orderBy("name"))
+      ? query(productosRef, orderBy("category"), where("category", "==", catId))
       : productosRef;
 
     getDocs(q)
